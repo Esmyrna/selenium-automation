@@ -27,5 +27,6 @@ public class SignUpTest {
     public void validateSignUpPage() {
         this.signUpPage.clickPageSignUp();
         this.signUpPage.fillFieldsSignUp("teste", email);
+        Assert.assertTrue(signUpPage.isMainPage());
     }
 }
