@@ -31,4 +31,17 @@ public class FormSignUpTest  {
 
        Assert.assertTrue(formSignUpPage.createdAccount());
    }
+
+    @Test
+    public void shouldValidateSignUpUser() {
+        formSignUpPage.takeFieldsInMainForm(3, "");
+        formSignUpPage.selectFieldsData();
+
+
+        formSignUpPage.fillFieldsAdress("", "", "Empresa Tal", "Rua São Felix",
+                "Rua Santo João", "PE", "Recife", "12213144", "82");
+
+        Assert.assertFalse(formSignUpPage.createdAccount());
+        Assert.assertTrue(formSignUpPage.isPageMain());
+    }
 }

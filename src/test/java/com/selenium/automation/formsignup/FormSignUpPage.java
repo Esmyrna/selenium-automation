@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class FormSignUpPage extends PageObject {
-
+    private static final String URL_SIGNUP = "https://automationexercise.com/signup";
     private static final String URL_ACCOUNT_CREATED = "https://automationexercise.com/account_created";
     public FormSignUpPage(WebDriver browser) {
         super(browser);
@@ -71,5 +71,9 @@ public class FormSignUpPage extends PageObject {
 
     public boolean createdAccount() {
         return browser.getCurrentUrl().equals(URL_ACCOUNT_CREATED);
+    }
+
+    public boolean isPageMain() {
+        return browser.getCurrentUrl().equals(URL_SIGNUP);
     }
 }
