@@ -20,13 +20,14 @@ public class SignUpTest {
     @Test
     public void changeSignUpPage() {
         this.signUpPage.clickPageSignUp();
+        this.signUpPage.fillFieldsSignUp("teste", email);
         Assert.assertTrue(signUpPage.isPageForm());
     }
 
     @Test
     public void validateSignUpPage() {
         this.signUpPage.clickPageSignUp();
-        this.signUpPage.fillFieldsSignUp("teste", email);
+        this.signUpPage.fillFieldsSignUp("teste", null);
         Assert.assertTrue(signUpPage.isMainPage());
     }
 }
