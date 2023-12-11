@@ -30,4 +30,5 @@ public class SignUpTest {
         this.signUpPage.fillFieldsSignUp("teste", null);
         Assert.assertTrue(signUpPage.isMainPage());
     }
+
 }

@@ -1,6 +1,7 @@
 package com.selenium.automation.signup;
 
 import com.selenium.automation.PageObject;
+import com.selenium.automation.contacts.ContactsPage;
 import com.selenium.automation.createAccountPage.CreateAccountPage;
 import com.selenium.automation.formsignup.FormSignUpPage;
 import com.selenium.automation.login.LoginPage;
@@ -10,6 +11,7 @@ public class SignUpPage extends PageObject {
     private static final String URL_MAIN = "https://automationexercise.com/";
     private static final String URL_LOGIN = "https://automationexercise.com/login";
     private static final String URL_SIGNUP = "https://automationexercise.com/signup";
+    private static final String URL_CONTACTS = "https://automationexercise.com/contact_us";
     public SignUpPage() {
         super(null);
         this.browser.navigate().to(URL_MAIN);
@@ -44,5 +46,9 @@ public class SignUpPage extends PageObject {
     public LoginPage userLoginPage(){
         browser.navigate().to(URL_SIGNUP);
         return new LoginPage(browser);
+    }
+    public ContactsPage contactUs() {
+        browser.navigate().to(URL_MAIN);
+        return new ContactsPage(browser);
     }
 }

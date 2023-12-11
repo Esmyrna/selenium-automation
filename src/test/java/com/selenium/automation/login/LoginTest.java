@@ -24,6 +24,14 @@ public class LoginTest {
     }
 
     @Test
+    public void checkWithoutSymbol() {
+        this.loginPage.fillFieldsLogin("", "");
+        this.loginPage.submitLogin();
+
+        Assert.assertTrue(loginPage.verifyURL());
+    }
+
+    @Test
     public void checkWithInvalidDataLogin() {
         this.loginPage.fillFieldsLogin("teste234@gmail.com", "321321");
         this.loginPage.submitLogin();
@@ -32,4 +40,6 @@ public class LoginTest {
         Assert.assertEquals("Your email or password is incorrect!", incorrectLogin);
         Assert.assertTrue(loginPage.verifyURL());
     }
+
+
 }
