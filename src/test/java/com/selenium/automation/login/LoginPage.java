@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends PageObject {
     private static final String URL_SIGNUP = "https://automationexercise.com/signup";
+    private static final String URL_LOGIN = "https://automationexercise.com/login";
 
     public LoginPage(WebDriver browser) {
         super(browser);
@@ -35,5 +36,17 @@ public class LoginPage extends PageObject {
         } catch (NoSuchElementException e) {
             return null;
         }
+    }
+
+    public String messageInvalidLogin() {
+        try {
+            return browser.findElement(By.xpath("//*[@id=\"form\"]/div/div/div[1]/div/form/p")).getText();
+        } catch (NoSuchElementException e) {
+            return null;
+        }
+    }
+
+    public boolean verifyURL() {
+        return browser.getCurrentUrl().equals(URL_LOGIN);
     }
 }

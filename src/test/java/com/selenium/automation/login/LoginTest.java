@@ -22,4 +22,14 @@ public class LoginTest {
         String logout = loginPage.returnPageWithLogout();
         Assert.assertEquals("Logout", logout);
     }
+
+    @Test
+    public void checkWithInvalidDataLogin() {
+        this.loginPage.fillFieldsLogin("teste234@gmail.com", "321321");
+        this.loginPage.submitLogin();
+
+        String incorrectLogin = loginPage.messageInvalidLogin();
+        Assert.assertEquals("Your email or password is incorrect!", incorrectLogin);
+        Assert.assertTrue(loginPage.verifyURL());
+    }
 }
