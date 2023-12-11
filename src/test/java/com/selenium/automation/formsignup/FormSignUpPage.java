@@ -63,7 +63,7 @@ public class FormSignUpPage extends PageObject {
         browser.findElement(By.id("city")).sendKeys(city);
         browser.findElement(By.id("zipcode")).sendKeys(zipCode);
         browser.findElement(By.id("mobile_number")).sendKeys(number);
-        browser.findElement(By.xpath("//*[@id=\"form\"]/div/div/div/div[1]/form/button")).click();
+        browser.findElement(By.xpath("//*[@id=\"form\"]/div/div/div/div[1]/form/button")).submit();
 
         return new AccountCreatePage(browser);
 
