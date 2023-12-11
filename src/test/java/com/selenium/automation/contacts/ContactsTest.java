@@ -28,4 +28,5 @@ public class ContactsTest {
         Assert.assertEquals("Success! Your details have been submitted successfully.", contactsPage.dataSendWithSucess());
     }
 
+
 }

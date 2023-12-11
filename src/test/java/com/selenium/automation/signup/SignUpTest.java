@@ -30,5 +30,11 @@ public class SignUpTest {
         this.signUpPage.fillFieldsSignUp("teste", null);
         Assert.assertTrue(signUpPage.isMainPage());
     }
+    @Test
+    public void validateSignUpPageWithoutEmailAndName() {
+        this.signUpPage.clickPageSignUp();
+        this.signUpPage.fillFieldsSignUp("", null);
+        Assert.assertTrue(signUpPage.isPageForm());
+    }
 
 }
