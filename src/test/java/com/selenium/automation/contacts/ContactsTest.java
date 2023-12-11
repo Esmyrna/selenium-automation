@@ -15,8 +15,17 @@ public class ContactsTest {
     }
     @Test
     public void clickContactUsNav() {
-        contactsPage.clickContact();
+        this.contactsPage.clickContact();
         Assert.assertTrue(contactsPage.isContactPage());
+    }
+
+    @Test
+    public void completedFieldsOfContacts() {
+        this.contactsPage.clickContact();
+        this.contactsPage.completedDataInForm("Daniel", "teste@gmail.com", "teste" , "testando campo");
+        this.contactsPage.clickEnter();
+
+        Assert.assertEquals("Success! Your details have been submitted successfully.", contactsPage.dataSendWithSucess());
     }
 
 }
